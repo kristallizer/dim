@@ -53,7 +53,7 @@ percent-encoding = "2.1.0"
 rand = { version = "0.8.5", features = ["small_rng"] }
 reqwest = { version = "0.11.0", features = ["json", "rustls-tls", "brotli"], default-features = false }
 rusqlite = { version = "0.27.0", features = ["hooks"] }
-rust-embed = "^5.9.0"
+rust-embed = "^6.3.0"
 sqlx = { version = "0.5", features = ["runtime-tokio-rustls"] }
 structopt = "0.3.21"
 thiserror = "1.0.30"
