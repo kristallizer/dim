@@ -80,7 +80,7 @@ fs_extra = "1.1.0"
 nix = "0.23.1"
 
 [target.'cfg(windows)'.dependencies]
-zip = "0.5.10"
+zip = "0.6.6"
 
 [dev-dependencies]
 serial_test = "0.6.0"
