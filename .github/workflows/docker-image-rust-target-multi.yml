@@ -1,32 +1,32 @@
 name: Build Dim Bin and Dockerize
 
 on:
-  push:
-    branches: [ 'master', 'docker-build' ]
-    tags: 'v*' 
+  # push:
+  # branches: [ 'master', 'docker-build' ]
+  # tags: 'v*'
   workflow_dispatch:
 
 env:
   CARGO_TERM_COLOR: always
-  
+
 jobs:
   create-ui:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3        
-      - name: Build UI 
+        uses: actions/checkout@v3
+      - name: Build UI
         uses: actions/setup-node@v3
         with:
-            node-version: '18'
-            cache: 'yarn'
+          node-version: "18"
+          cache: "yarn"
       - run: npm install -g yarn
       - run: yarn -d --cwd ui/ install
         env:
-            NODE_OPTIONS: --openssl-legacy-provider
+          NODE_OPTIONS: --openssl-legacy-provider
       - run: yarn -d --cwd ui/ build
         env:
-            NODE_OPTIONS: --openssl-legacy-provider
+          NODE_OPTIONS: --openssl-legacy-provider
       - name: upload ui artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -36,7 +36,7 @@ jobs:
   build-armhf:
     needs: [create-ui]
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: rust:1.63
       env:
         CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABIHF_LINKER: arm-linux-gnueabihf-gcc
@@ -80,11 +80,10 @@ jobs:
           name: armhf-bin
           path: target/armv7-unknown-linux-gnueabihf/release/dim
 
-
   build-aarch64:
     needs: [create-ui]
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: rust:1.63
       env:
         CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
@@ -117,7 +116,7 @@ jobs:
       - name: add arm64 target
         run: rustup target add aarch64-unknown-linux-gnu
       - name: smoke test
-        run: rustc --version            
+        run: rustc --version
       - name: compile aarch64
         run: cargo build --target=aarch64-unknown-linux-gnu --release
       - name: check path
@@ -127,11 +126,11 @@ jobs:
         with:
           name: aarch64-bin
           path: target/aarch64-unknown-linux-gnu/release/dim
-    
+
   build-amd64:
     needs: [create-ui]
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: rust:1.63
       env:
         CARGO_TERM_COLOR: always
@@ -171,7 +170,7 @@ jobs:
           path: target/x86_64-unknown-linux-gnu/release/dim
 
   build-docker-image:
-    needs: [build-armhf,build-aarch64,build-amd64]
+    needs: [build-armhf, build-aarch64, build-amd64]
     name: Build Docker image
     runs-on: ubuntu-latest
     permissions:
@@ -229,4 +228,3 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-to: type=gha,mode=max
           cache-from: type=gha
-

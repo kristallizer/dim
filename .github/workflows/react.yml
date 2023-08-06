@@ -2,14 +2,14 @@ name: React
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-    - "ui/**"
-  pull_request:
-    paths:
-    - "ui/**"
-    branches:
-    - master
+  # push:
+  # paths:
+  # - "ui/**"
+  # pull_request:
+  # paths:
+  # - "ui/**"
+  # branches:
+  # - master
 
 defaults:
   run:
@@ -45,6 +45,6 @@ jobs:
         run: yarn build
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
-        with: 
+        with:
           name: webui
           path: ui/build/
