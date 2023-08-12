@@ -27,10 +27,10 @@ export const useSuggestions = (initial: Array<SuggestionHint> | null) => {
   // sub-suggestions/options have a `enableIf` method that will return whether this option should be
   // showable or just hidden away.
   const [suggestionsTree, setSuggestionsTree] = useState<Array<SuggestionHint>>(
-    initial ? initial : []
+    initial ? initial : [],
   );
   const [suggestions, setSuggestions] = useState<Array<SuggestionHint>>(
-    initial ? initial : []
+    initial ? initial : [],
   );
   const [selected, setSelected] = useState<string | undefined>(undefined);
 
@@ -46,7 +46,7 @@ export const useSuggestions = (initial: Array<SuggestionHint> | null) => {
       setSuggestionsTree(suggestions);
       setSuggestions(options);
     },
-    [setSuggestions, suggestionsTree, setSuggestionsTree, suggestions]
+    [setSuggestions, suggestionsTree, setSuggestionsTree, suggestions],
   );
 
   const resetTree = useCallback(() => {
@@ -57,7 +57,7 @@ export const useSuggestions = (initial: Array<SuggestionHint> | null) => {
     (tag_name) => {
       setSelected(tag_name);
     },
-    [setSelected]
+    [setSelected],
   );
 
   const getFilterFn = useCallback(
@@ -67,7 +67,7 @@ export const useSuggestions = (initial: Array<SuggestionHint> | null) => {
 
       return filter;
     },
-    [suggestionsTree]
+    [suggestionsTree],
   );
 
   const clearSelected = useCallback(() => {

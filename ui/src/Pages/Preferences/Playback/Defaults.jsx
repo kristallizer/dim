@@ -17,12 +17,12 @@ function Defaults() {
       dispatch(
         updateUserSettings({
           default_video_quality: quality,
-        })
+        }),
       );
 
       setDropdownVisible(false);
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleClick = useCallback((e) => {

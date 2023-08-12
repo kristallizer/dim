@@ -53,7 +53,7 @@ function ProfileImage(props: Props) {
         img.src = props.src;
       }
     },
-    [currentSrc, props.src]
+    [currentSrc, props.src],
   );
 
   return (

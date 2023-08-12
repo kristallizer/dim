@@ -43,7 +43,7 @@ export const wsConnect =
         dispatch(
           addNotification({
             msg: "Connection to the server has been restored.",
-          })
+          }),
         );
       }
 

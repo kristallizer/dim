@@ -23,7 +23,7 @@ function VideoActionSubtitles() {
         toggleSubtitles();
       }
     },
-    [toggleSubtitles]
+    [toggleSubtitles],
   );
 
   useEffect(() => {

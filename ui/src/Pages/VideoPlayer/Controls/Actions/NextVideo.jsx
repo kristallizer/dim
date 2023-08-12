@@ -17,13 +17,13 @@ function VideoActionNextVideo() {
 
   const history = useHistory();
   const { data: currentMedia } = useGetMediaQuery(
-    video.mediaID ? video.mediaID : skipToken
+    video.mediaID ? video.mediaID : skipToken,
   );
 
   const nextEpisodeId = currentMedia.next_episode_id;
 
   const { data: nextMediaFiles } = useGetMediaFilesQuery(
-    nextEpisodeId ? nextEpisodeId : skipToken
+    nextEpisodeId ? nextEpisodeId : skipToken,
   );
 
   useEffect(() => {

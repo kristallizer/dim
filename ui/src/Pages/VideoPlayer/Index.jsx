@@ -53,11 +53,11 @@ function VideoPlayer() {
   const { token } = auth;
 
   const { data: media } = useGetMediaQuery(
-    video.mediaID ? video.mediaID : skipToken
+    video.mediaID ? video.mediaID : skipToken,
   );
   const nextEpisodeId = media && media.next_episode_id;
   const { data: nextMediaFiles } = useGetMediaFilesQuery(
-    nextEpisodeId ? nextEpisodeId : skipToken
+    nextEpisodeId ? nextEpisodeId : skipToken,
   );
 
   useEffect(() => {
@@ -122,13 +122,13 @@ function VideoPlayer() {
       dispatch(setGID(payload.gid));
 
       const tVideos = payload.tracks.filter(
-        (track) => track.content_type === "video"
+        (track) => track.content_type === "video",
       );
       const tAudios = payload.tracks.filter(
-        (track) => track.content_type === "audio"
+        (track) => track.content_type === "audio",
       );
       const tSubtitles = payload.tracks.filter(
-        (track) => track.content_type === "subtitle"
+        (track) => track.content_type === "subtitle",
       );
 
       dispatch(
@@ -136,13 +136,13 @@ function VideoPlayer() {
           video: tVideos,
           audio: tAudios,
           subtitle: tSubtitles,
-        })
+        }),
       );
 
       dispatch(
         setManifestState({
           virtual: { loaded: true },
-        })
+        }),
       );
     })();
   }, [dispatch, params.fileID, token, video.gid]);
@@ -156,7 +156,7 @@ function VideoPlayer() {
       setManifestState({
         loading: true,
         loaded: false,
-      })
+      }),
     );
 
     const includes = `${videoTracks.list
@@ -205,11 +205,11 @@ function VideoPlayer() {
           ? defaultTracks[0]
           : trackList[0];
       const initialTracks = trackArr.filter(
-        (x) => x.id === defaultTrack.set_id
+        (x) => x.id === defaultTrack.set_id,
       );
       console.log(
         `[${trackArr[0].type}] setting initial track to`,
-        initialTracks
+        initialTracks,
       );
       return initialTracks;
     };
@@ -244,7 +244,7 @@ function VideoPlayer() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     videoRef.current.play();
@@ -254,7 +254,7 @@ function VideoPlayer() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
     videoRef.current.pause();
   }, [dispatch, videoRef]);
@@ -264,14 +264,14 @@ function VideoPlayer() {
       if (!videoRef.current) return;
       if (
         e.target.closest(
-          ".videoMenus, .videoControls, .modalBoxContainer, .ReactModalPortal"
+          ".videoMenus, .videoControls, .modalBoxContainer, .ReactModalPortal",
         )
       )
         return;
 
       videoRef.current.paused ? play() : pause();
     },
-    [play, pause, videoRef]
+    [play, pause, videoRef],
   );
 
   const seekTo = useCallback(
@@ -282,10 +282,10 @@ function VideoPlayer() {
         updateVideo({
           seeking: false,
           currentTime: newTime,
-        })
+        }),
       );
     },
-    [dispatch, player]
+    [dispatch, player],
   );
 
   useEffect(() => {

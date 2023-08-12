@@ -20,10 +20,10 @@ function Authentication() {
       dispatch(
         updateGlobalSettings({
           disable_auth: !state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

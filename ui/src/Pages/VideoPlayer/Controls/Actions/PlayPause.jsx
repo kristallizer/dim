@@ -21,7 +21,7 @@ function VideoActionPlayPause() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     player.play();
@@ -31,7 +31,7 @@ function VideoActionPlayPause() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     player.pause();
@@ -44,7 +44,7 @@ function VideoActionPlayPause() {
 
       player.isPaused() ? play() : pause();
     },
-    [pause, play, player]
+    [pause, play, player],
   );
 
   useEffect(() => {

@@ -49,7 +49,7 @@ export const SearchResult = ({
       if (isActive) setCurrent(null);
       else setCurrent(id);
     },
-    [isActive, setCurrent, id]
+    [isActive, setCurrent, id],
   );
 
   const toggleCancel = useCallback(() => {

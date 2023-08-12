@@ -21,7 +21,7 @@ export const ConfirmationBox = (props: Props) => {
       close();
       action();
     },
-    [action]
+    [action],
   );
 
   return (

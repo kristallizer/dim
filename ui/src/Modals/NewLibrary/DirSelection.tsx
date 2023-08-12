@@ -43,7 +43,7 @@ function DirSelection(props: Props) {
         setSelectedFolders((state) => [...state, path]);
       }
     },
-    [selectedFolders, setSelectedFolders]
+    [selectedFolders, setSelectedFolders],
   );
 
   const selectAllFolders = useCallback(() => {
@@ -52,7 +52,7 @@ function DirSelection(props: Props) {
     }
 
     const unselectedFolders = items.filter(
-      (item) => !selectedFolders.includes(item)
+      (item) => !selectedFolders.includes(item),
     );
 
     setSelectedFolders((state) => unselectedFolders.concat(state));
@@ -74,7 +74,7 @@ function DirSelection(props: Props) {
       setForwardHistory(history);
       setCurrent(path);
     },
-    [current, setCurrent, forwardHistory, setForwardHistory]
+    [current, setCurrent, forwardHistory, setForwardHistory],
   );
 
   const goBack = useCallback(() => {
@@ -115,7 +115,7 @@ function DirSelection(props: Props) {
     } else {
       dirs = items.map((dir, i) => {
         const count = selectedFolders.filter(
-          (folder) => folder.includes(dir + "/") && folder !== dir
+          (folder) => folder.includes(dir + "/") && folder !== dir,
         ).length;
 
         return (

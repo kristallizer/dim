@@ -19,7 +19,7 @@ function GhostCards() {
         <div className="card">
           <div className="placeholder" />
         </div>
-      </div>
+      </div>,
     );
   }
 

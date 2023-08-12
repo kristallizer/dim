@@ -34,7 +34,7 @@ export const useSearchTags = (initial: Array<ISearchTag>): TagHook => {
     (tag) => {
       setActiveTags([...activeTags, tag]);
     },
-    [activeTags, setActiveTags]
+    [activeTags, setActiveTags],
   );
 
   const setTagValue = useCallback(
@@ -46,7 +46,7 @@ export const useSearchTags = (initial: Array<ISearchTag>): TagHook => {
 
       setActiveTags([...tags, { name: tag, content: value }]);
     },
-    [activeTags, setActiveTags]
+    [activeTags, setActiveTags],
   );
 
   const popTag = useCallback(() => {
@@ -62,7 +62,7 @@ export const useSearchTags = (initial: Array<ISearchTag>): TagHook => {
     (tag: string) => {
       return activeTags.find((x) => x.name === tag);
     },
-    [activeTags]
+    [activeTags],
   );
 
   const lastTag = useCallback(() => {

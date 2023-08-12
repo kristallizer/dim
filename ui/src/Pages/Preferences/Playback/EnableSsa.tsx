@@ -4,7 +4,7 @@ import Toggle from "Components/Toggle";
 
 function EnableSsa() {
   const [enableSsa, setEnableSsa] = useState(
-    localStorage.getItem("enable_ssa") === "true"
+    localStorage.getItem("enable_ssa") === "true",
   );
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function EnableSsa() {
     (state) => {
       setEnableSsa(state);
     },
-    [setEnableSsa]
+    [setEnableSsa],
   );
 
   return (

@@ -25,10 +25,10 @@ function General() {
       dispatch(
         updateGlobalSettings({
           verbose: state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const updatePort = useCallback(() => {
@@ -40,7 +40,7 @@ function General() {
     dispatch(
       updateGlobalSettings({
         port: parseInt(port),
-      })
+      }),
     );
   }, [dispatch, port]);
 

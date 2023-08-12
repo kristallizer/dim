@@ -14,14 +14,14 @@ function ContinueProgress() {
   const { seekTo } = useContext(VideoPlayerContext);
 
   const { data: media } = useGetMediaQuery(
-    video.mediaID ? video.mediaID : skipToken
+    video.mediaID ? video.mediaID : skipToken,
   );
 
   return (
     <ConfirmationBox
       title="Resume watching"
       msg={`You stopped at ${formatHHMMSS(
-        media[video.mediaID]?.info.data.progress | 0
+        media[video.mediaID]?.info.data.progress | 0,
       )}`}
       cancelText="Cancel"
       confirmText="Resume"

@@ -44,7 +44,7 @@ function SeekingTo(props) {
 
       setSeekingTo(formatHHMMSS(newTime));
     },
-    [nameRef, player, timeRef]
+    [nameRef, player, timeRef],
   );
 
   const handleMouseleave = useCallback(() => {

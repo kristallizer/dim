@@ -27,7 +27,7 @@ function VideoActionVolume() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     if (currentVolume === 0) {
@@ -44,7 +44,7 @@ function VideoActionVolume() {
       dispatch(
         updateVideo({
           muted: !currentMuteState,
-        })
+        }),
       );
     }
   }, [currentVolume, dispatch, player]);
@@ -55,7 +55,7 @@ function VideoActionVolume() {
         toggleMute();
       }
     },
-    [toggleMute]
+    [toggleMute],
   );
 
   const handleClick = useCallback((e) => {
@@ -108,7 +108,7 @@ function VideoActionVolume() {
         setShowVolCount(true);
       }
     },
-    [dragging]
+    [dragging],
   );
 
   const handleWheelEvent = useCallback(
@@ -127,7 +127,7 @@ function VideoActionVolume() {
         setCurrentVolume(newVolume);
       }
     },
-    [currentVolume]
+    [currentVolume],
   );
 
   useEffect(() => {

@@ -117,7 +117,7 @@ function ImageLoad(props: Props) {
       fetchImage();
       setTryAgainCount(2);
     },
-    [fetchImage, props.triggerAnimation]
+    [fetchImage, props.triggerAnimation],
   );
 
   useEffect(() => {

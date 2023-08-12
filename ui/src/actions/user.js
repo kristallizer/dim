@@ -88,7 +88,7 @@ export const changeUsername =
       dispatch(
         addNotification({
           msg: "Your username has now been updated.",
-        })
+        }),
       );
     } catch (err) {
       dispatch({
@@ -131,7 +131,7 @@ export const changeAvatar = (file) => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: "Your new picture has now been set as your avatar.",
-      })
+      }),
     );
   } catch (err) {
     dispatch({
@@ -158,7 +158,7 @@ export const delAvatar = () => async (dispatch, getState) => {
       dispatch(
         addNotification({
           msg: "Failed to remove your current avatar.",
-        })
+        }),
       );
 
       return;
@@ -167,7 +167,7 @@ export const delAvatar = () => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: "Successfuly removed your current avatar.",
-      })
+      }),
     );
   } catch (err) {
     dispatch({

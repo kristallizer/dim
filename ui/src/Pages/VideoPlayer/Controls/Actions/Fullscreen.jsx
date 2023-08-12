@@ -22,7 +22,7 @@ function VideoActionFullscreen() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     try {
@@ -41,10 +41,10 @@ function VideoActionFullscreen() {
         updateVideo({
           fullscreen: document.fullscreenElement !== null,
           idleCount: 0,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleKeyDown = useCallback(
@@ -53,7 +53,7 @@ function VideoActionFullscreen() {
         toggleFullscreen();
       }
     },
-    [toggleFullscreen]
+    [toggleFullscreen],
   );
 
   useEffect(() => {

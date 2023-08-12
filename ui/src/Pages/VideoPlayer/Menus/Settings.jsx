@@ -29,11 +29,11 @@ function VideoMenuSettings() {
         dispatch(
           updateVideo({
             showSettings: false,
-          })
+          }),
         );
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   const goBack = useCallback(() => {
@@ -50,7 +50,7 @@ function VideoMenuSettings() {
 
       const playerTracks = player.getTracksFor(trackType);
       const selectedTrack = playerTracks.filter(
-        (track) => track.id === tracks[i].set_id
+        (track) => track.id === tracks[i].set_id,
       );
 
       console.log("[video] changed track to", selectedTrack[0]);
@@ -60,10 +60,10 @@ function VideoMenuSettings() {
       dispatch(
         updateTrack(trackType, {
           current: parseInt(i),
-        })
+        }),
       );
     },
-    [dispatch, player, video]
+    [dispatch, player, video],
   );
 
   useEffect(() => {

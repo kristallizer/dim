@@ -24,7 +24,7 @@ export const calcNewSize = (
   currentWidth: number,
   currentHeight: number,
   newWidth?: number,
-  newHeight?: number
+  newHeight?: number,
 ) => {
   const ratio = currentWidth / currentHeight;
 
@@ -72,7 +72,7 @@ export const parseVtt = (text: string) => {
       cues.push(new VTTCue(sts, ets, seg.join(" \n")));
     } catch (e) {
       console.warn(
-        `failed to parse a cue raw_seg=${raw_seg} sts=${sts} ets=${ets}`
+        `failed to parse a cue raw_seg=${raw_seg} sts=${sts} ets=${ets}`,
       );
     }
   }

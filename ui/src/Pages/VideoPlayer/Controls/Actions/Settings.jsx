@@ -23,7 +23,7 @@ function VideoActionSettings() {
         toggleSettings();
       }
     },
-    [toggleSettings]
+    [toggleSettings],
   );
 
   useEffect(() => {

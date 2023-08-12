@@ -19,7 +19,9 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transition: transform 0.3s ease-in-out, background 100ms ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      background 100ms ease-in-out;
 
     &:hover {
       background: var(--quinaryColor);

@@ -50,8 +50,8 @@ function Card(props) {
 
     const hoverCardWidth = parseInt(
       getComputedStyle(document.documentElement).getPropertyValue(
-        "--hoverCardWidth"
-      )
+        "--hoverCardWidth",
+      ),
     );
 
     const showHoverOnRight = window.innerWidth - rect.right > hoverCardWidth;

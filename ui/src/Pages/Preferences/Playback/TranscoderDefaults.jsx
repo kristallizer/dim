@@ -18,10 +18,10 @@ function TranscoderDefaults() {
       dispatch(
         updateGlobalSettings({
           enable_hwaccel: state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

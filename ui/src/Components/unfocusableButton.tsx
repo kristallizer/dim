@@ -16,7 +16,7 @@ export function UnfocusableButton(props: ButtonProps) {
       onClick();
       e.target.blur();
     },
-    [onClick]
+    [onClick],
   );
 
   return (

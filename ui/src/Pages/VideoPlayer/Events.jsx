@@ -25,7 +25,7 @@ function VideoEvents() {
       setManifestState({
         loading: false,
         loaded: true,
-      })
+      }),
     );
   }, [dispatch]);
 
@@ -41,24 +41,24 @@ function VideoEvents() {
     const playerVideoTrackIdx = video.tracks.video.list.filter(
       (track) =>
         track.bandwidth === videoQuality.bitrate &&
-        parseInt(track.height) === videoQuality.height
+        parseInt(track.height) === videoQuality.height,
     );
 
     const audioTrack = player.getCurrentTrackFor("audio");
     const audioTrackIdx = video.tracks.audio.list.filter(
-      (track) => track.set_id === audioTrack.id
+      (track) => track.set_id === audioTrack.id,
     );
 
     dispatch(
       updateTrack("video", {
         current: video.tracks.video.list.indexOf(playerVideoTrackIdx[0]),
-      })
+      }),
     );
 
     dispatch(
       updateTrack("audio", {
         current: video.tracks.audio.list.indexOf(audioTrackIdx[0]),
-      })
+      }),
     );
 
     dispatch(
@@ -66,7 +66,7 @@ function VideoEvents() {
         canPlay: true,
         waiting: false,
         duration: Math.round(player.duration()) | 0,
-      })
+      }),
     );
   }, [dispatch, player, video]);
 
@@ -76,7 +76,7 @@ function VideoEvents() {
     dispatch(
       updateVideo({
         paused: true,
-      })
+      }),
     );
   }, [dispatch]);
 
@@ -84,7 +84,7 @@ function VideoEvents() {
     dispatch(
       updateVideo({
         paused: false,
-      })
+      }),
     );
   }, [dispatch]);
 
@@ -94,7 +94,7 @@ function VideoEvents() {
     dispatch(
       updateVideo({
         waiting: true,
-      })
+      }),
     );
   }, [dispatch]);
 
@@ -104,7 +104,7 @@ function VideoEvents() {
     dispatch(
       updateVideo({
         playback_ended: true,
-      })
+      }),
     );
   }, [dispatch]);
 
@@ -127,11 +127,11 @@ function VideoEvents() {
               msg: e.error.message,
               errors: error.errors,
             },
-          })
+          }),
         );
       })();
     },
-    [dispatch, video.gid]
+    [dispatch, video.gid],
   );
 
   const ePlayBackNotAllowed = useCallback(
@@ -142,11 +142,11 @@ function VideoEvents() {
         dispatch(
           updateVideo({
             paused: true,
-          })
+          }),
         );
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   /*
@@ -170,10 +170,10 @@ function VideoEvents() {
           currentTime: newTime,
           buffer: Math.round(player.getBufferLength()),
           waiting: false,
-        })
+        }),
       );
     },
-    [dispatch, player, video.prevSeekTo]
+    [dispatch, player, video.prevSeekTo],
   );
 
   const eQualityChange = useCallback(
@@ -192,16 +192,16 @@ function VideoEvents() {
       const realTrack = tracks.filter(
         (track) =>
           track.bandwidth === newTrack.bitrate &&
-          parseInt(track.height) === newTrack.height
+          parseInt(track.height) === newTrack.height,
       )[0];
 
       dispatch(
         updateTrack(e.mediaType, {
           current: tracks.indexOf(realTrack),
-        })
+        }),
       );
     },
-    [dispatch, player, video]
+    [dispatch, player, video],
   );
 
   const eTrackChange = useCallback(
@@ -212,16 +212,16 @@ function VideoEvents() {
 
       const tracks = video.tracks.audio.list;
       const realTrack = tracks.filter(
-        (track) => track.set_id === e.newMediaInfo.id
+        (track) => track.set_id === e.newMediaInfo.id,
       )[0];
 
       dispatch(
         updateTrack(e.mediaType, {
           current: tracks.indexOf(realTrack),
-        })
+        }),
       );
     },
-    [dispatch, video]
+    [dispatch, video],
   );
 
   // other events
@@ -258,7 +258,7 @@ function VideoEvents() {
       player.off(MediaPlayer.events.PLAYBACK_WAITING, ePlayBackWaiting);
       player.off(
         MediaPlayer.events.PLAYBACK_TIME_UPDATED,
-        ePlayBackTimeUpdated
+        ePlayBackTimeUpdated,
       );
       player.off(MediaPlayer.events.PLAYBACK_NOT_ALLOWED, ePlayBackNotAllowed);
       player.off(MediaPlayer.events.PLAYBACK_ENDED, ePlayBackEnded);

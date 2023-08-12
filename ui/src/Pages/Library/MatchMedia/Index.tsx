@@ -43,7 +43,7 @@ const MatchMedia = ({ data, refetch, mediafileSearch }: MatchMediaProps) => {
       external_id: externalId ?? 0,
       media_type: mediaType ?? "",
     },
-    { skip: !startMatch }
+    { skip: !startMatch },
   );
 
   // reesize screen size on window resize
@@ -66,7 +66,7 @@ const MatchMedia = ({ data, refetch, mediafileSearch }: MatchMediaProps) => {
       dispatch(
         addNotification({
           msg: "Error matching files.",
-        })
+        }),
       );
       return;
     }
@@ -92,7 +92,7 @@ const MatchMedia = ({ data, refetch, mediafileSearch }: MatchMediaProps) => {
     (current: number | null) => {
       setCurrent(current);
     },
-    [setCurrent]
+    [setCurrent],
   );
 
   const toggleOpen = useCallback(() => {
@@ -115,7 +115,7 @@ const MatchMedia = ({ data, refetch, mediafileSearch }: MatchMediaProps) => {
       setMediaType(media_type);
       setStartMatch(true);
     },
-    [setStartMatch, setExternalId, setMediaType]
+    [setStartMatch, setExternalId, setMediaType],
   );
 
   const selectFile = useCallback(
@@ -123,14 +123,14 @@ const MatchMedia = ({ data, refetch, mediafileSearch }: MatchMediaProps) => {
       if (id in selectedFiles) return;
       setSelectedFiles([...selectedFiles, id]);
     },
-    [selectedFiles, setSelectedFiles]
+    [selectedFiles, setSelectedFiles],
   );
 
   const unselectFile = useCallback(
     (id: number) => {
       setSelectedFiles(selectedFiles.filter((x: number) => x !== id));
     },
-    [selectedFiles, setSelectedFiles]
+    [selectedFiles, setSelectedFiles],
   );
 
   const onSearch = useCallback(
@@ -141,14 +141,14 @@ const MatchMedia = ({ data, refetch, mediafileSearch }: MatchMediaProps) => {
       setSearchParams(params);
       toggleSuggestionsOff();
     },
-    [setSearchQuery, setSearchParams, toggleSuggestionsOff]
+    [setSearchQuery, setSearchParams, toggleSuggestionsOff],
   );
 
   const selectMediatype = useCallback(
     (mediatype) => {
       setMediatype(mediatype);
     },
-    [setMediatype]
+    [setMediatype],
   );
 
   // effect needed so that we can hide suggestions when the user clicks outside the container.

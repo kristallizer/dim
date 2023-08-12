@@ -32,7 +32,7 @@ export const InputConfirmationBox = (props: Props) => {
         close();
       }
     },
-    [action]
+    [action],
   );
 
   return (

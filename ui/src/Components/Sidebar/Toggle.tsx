@@ -59,7 +59,7 @@ function Toggle(props: Props) {
       main.classList.toggle("full", visible);
       main.classList.toggle("shrunk", !visible);
     },
-    [props.sidebar, visible]
+    [props.sidebar, visible],
   );
 
   useEffect(() => {

@@ -74,7 +74,7 @@ function RematchMediaModal(props) {
 
     const req = await fetch(
       `/api/v1/media/${id}/match?external_id=${tmdbID}&media_type=${mediaType}`,
-      config
+      config,
     );
 
     if (req.status !== 200) {
@@ -85,7 +85,7 @@ function RematchMediaModal(props) {
     dispatch(
       addNotification({
         msg: `Sucessfuly matched ${id}.`,
-      })
+      }),
     );
 
     clearData();

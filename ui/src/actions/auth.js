@@ -157,7 +157,7 @@ export const changePassword =
         dispatch(
           addNotification({
             msg: "Failed to change password.",
-          })
+          }),
         );
 
         return;
@@ -166,13 +166,13 @@ export const changePassword =
       dispatch(
         addNotification({
           msg: "Your password has now been updated.",
-        })
+        }),
       );
     } catch (err) {
       dispatch(
         addNotification({
           msg: "Failed to change password.",
-        })
+        }),
       );
     }
   };
@@ -210,7 +210,7 @@ export const delAccount = (password) => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: "Your account has been deleted, you have been logged out.",
-      })
+      }),
     );
   } catch (err) {
     dispatch({
@@ -277,7 +277,7 @@ export const createNewInvite = () => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: `Successfuly created a new invite token: ${payload.token}.`,
-      })
+      }),
     );
   } catch (err) {
     dispatch({
@@ -304,7 +304,7 @@ export const delInvite = (inviteToken) => async (dispatch, getState) => {
       dispatch(
         addNotification({
           msg: `Could not delete invite token: ${inviteToken}`,
-        })
+        }),
       );
 
       return;
@@ -313,7 +313,7 @@ export const delInvite = (inviteToken) => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: `Successfuly deleted invite token: ${inviteToken}`,
-      })
+      }),
     );
   } catch (err) {
     dispatch({

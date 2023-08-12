@@ -24,7 +24,7 @@ function DirectoryPaths() {
     dispatch(
       updateGlobalSettings({
         cache_dir: cache,
-      })
+      }),
     );
   }, [cache, dispatch]);
 
@@ -41,7 +41,7 @@ function DirectoryPaths() {
     dispatch(
       updateGlobalSettings({
         metadata_dir: metadata,
-      })
+      }),
     );
   }, [dispatch, metadata]);
 

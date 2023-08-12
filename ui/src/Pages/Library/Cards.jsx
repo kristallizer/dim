@@ -57,7 +57,7 @@ function Cards() {
         setFetched(true);
       } catch (err) {}
     },
-    [auth.token, currentID]
+    [auth.token, currentID],
   );
 
   const handleWS = useCallback(
@@ -79,7 +79,7 @@ function Cards() {
         setThrottleEventNewCardID(id);
       }
     },
-    [fetchCards, params.id, throttleEventNewCardID]
+    [fetchCards, params.id, throttleEventNewCardID],
   );
 
   useEffect(() => {

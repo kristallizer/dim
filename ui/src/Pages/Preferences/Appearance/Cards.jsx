@@ -21,10 +21,10 @@ function Cards() {
       dispatch(
         updateUserSettings({
           show_card_names: state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleShowHoverCardsToggle = useCallback(
@@ -32,10 +32,10 @@ function Cards() {
       dispatch(
         updateUserSettings({
           show_hovercards: state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

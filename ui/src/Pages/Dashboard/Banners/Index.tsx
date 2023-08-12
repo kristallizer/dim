@@ -37,7 +37,7 @@ function Banners() {
         setThrottleEventNewCardID(id);
       }
     },
-    [items, refetch, throttleEventNewCardID]
+    [items, refetch, throttleEventNewCardID],
   );
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function Banners() {
       }
       setActiveIndex(parseInt(e.target.dataset.key));
     },
-    [currentTimeoutID]
+    [currentTimeoutID],
   );
 
   useEffect(() => {

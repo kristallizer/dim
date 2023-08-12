@@ -17,12 +17,12 @@ function VideoActionPrevVideo() {
 
   const history = useHistory();
   const { data: currentMedia } = useGetMediaQuery(
-    video.mediaID ? video.mediaID : skipToken
+    video.mediaID ? video.mediaID : skipToken,
   );
 
   const prevEpisodeId = currentMedia.prev_episode_id;
   const { data: nextMediaFiles } = useGetMediaFilesQuery(
-    prevEpisodeId ? prevEpisodeId : skipToken
+    prevEpisodeId ? prevEpisodeId : skipToken,
   );
 
   useEffect(() => {

@@ -12,5 +12,5 @@ interface VideoPlayerContext {
 // See: https://github.com/typescript-eslint/typescript-eslint/issues/2585
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export const VideoPlayerContext = createContext<VideoPlayerContext | null>(
-  null
+  null,
 );

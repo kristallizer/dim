@@ -17,7 +17,7 @@ export const SearchResults = ({ query, params }: Props) => {
   const [year, setYear] = useState<string | null>(null);
   const { data, isFetching, error } = useExternalSearchQuery(
     { query, year, mediaType: mediaType ?? "" },
-    { refetchOnMountOrArgChange: true, skip }
+    { refetchOnMountOrArgChange: true, skip },
   );
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export const SearchResults = ({ query, params }: Props) => {
               key={id}
             />
           );
-        }
+        },
       );
 
   return (

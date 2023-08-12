@@ -136,7 +136,7 @@ export const NestedFileView = ({
           select={select}
           unselect={unselect}
           key={item.folder}
-        />
+        />,
       );
     } else {
       folders.push(
@@ -147,7 +147,7 @@ export const NestedFileView = ({
           unselect={unselect}
           object={item}
           key={item.file}
-        />
+        />,
       );
     }
   }

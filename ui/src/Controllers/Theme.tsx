@@ -14,7 +14,7 @@ function ThemeController() {
         for (const prop in DefaultTheme) {
           document.documentElement.style.setProperty(
             `--${prop}`,
-            `${DefaultTheme[prop as keyof typeof DefaultTheme]}`
+            `${DefaultTheme[prop as keyof typeof DefaultTheme]}`,
           );
         }
         break;
@@ -22,7 +22,7 @@ function ThemeController() {
         for (const prop in BlindTheme) {
           document.documentElement.style.setProperty(
             `--${prop}`,
-            `${BlindTheme[prop as keyof typeof BlindTheme]}`
+            `${BlindTheme[prop as keyof typeof BlindTheme]}`,
           );
         }
         break;
@@ -30,7 +30,7 @@ function ThemeController() {
         for (const prop in LightsOff) {
           document.documentElement.style.setProperty(
             `--${prop}`,
-            `${LightsOff[prop as keyof typeof LightsOff]}`
+            `${LightsOff[prop as keyof typeof LightsOff]}`,
           );
         }
         break;

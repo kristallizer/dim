@@ -19,10 +19,10 @@ function Sidebar() {
       dispatch(
         updateUserSettings({
           is_sidebar_compact: state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

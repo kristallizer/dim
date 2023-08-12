@@ -110,7 +110,7 @@ export const updateUserSettings = (data) => async (dispatch, getState) => {
       dispatch(
         addNotification({
           msg: "Failed to save settings.",
-        })
+        }),
       );
 
       return;
@@ -124,13 +124,13 @@ export const updateUserSettings = (data) => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: "Successfuly saved your changes.",
-      })
+      }),
     );
   } catch (err) {
     dispatch(
       addNotification({
         msg: "Failed to save settings.",
-      })
+      }),
     );
   }
 };
@@ -162,7 +162,7 @@ export const updateGlobalSettings = (data) => async (dispatch, getState) => {
       dispatch(
         addNotification({
           msg: "Failed to save settings.",
-        })
+        }),
       );
 
       return;
@@ -176,13 +176,13 @@ export const updateGlobalSettings = (data) => async (dispatch, getState) => {
     dispatch(
       addNotification({
         msg: "Successfuly saved your changes.",
-      })
+      }),
     );
   } catch (err) {
     dispatch(
       addNotification({
         msg: "Failed to save settings.",
-      })
+      }),
     );
   }
 };

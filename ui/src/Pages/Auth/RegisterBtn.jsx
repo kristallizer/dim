@@ -68,7 +68,7 @@ function RegisterBtn(props) {
         authorize();
       }
     },
-    [authorize]
+    [authorize],
   );
 
   useEffect(() => {

@@ -40,7 +40,7 @@ export const AdvancedSearch = (props: Props) => {
   const [value, setValue] = useState<string>("");
   const inputRef = useRef<HTMLDivElement>(null);
   const { activeTags, appendTag, setTagValue, popTag, lastTag } = useSearchTags(
-    [{ name: "Media", content: mediatype }]
+    [{ name: "Media", content: mediatype }],
   );
 
   const mediaHints = [
@@ -77,7 +77,7 @@ export const AdvancedSearch = (props: Props) => {
       setValue(e.target.innerText);
       toggleSuggestionsOn();
     },
-    [setValue, toggleSuggestionsOn]
+    [setValue, toggleSuggestionsOn],
   );
 
   useEffect(() => {
@@ -128,7 +128,7 @@ export const AdvancedSearch = (props: Props) => {
       resetTree,
       getFilterFn,
       setValue,
-    ]
+    ],
   );
 
   const onSuggestionClick = useCallback(
@@ -163,7 +163,7 @@ export const AdvancedSearch = (props: Props) => {
       clearSelected,
       toggleSuggestionsOn,
       setValue,
-    ]
+    ],
   );
 
   // called to prepare the query and params for the higher-level search functions
@@ -214,7 +214,7 @@ export const AdvancedSearch = (props: Props) => {
         onBackspace();
       }
     },
-    [matchInput, onEnter, onBackspace]
+    [matchInput, onEnter, onBackspace],
   );
 
   return (

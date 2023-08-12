@@ -23,17 +23,17 @@ function VideoMenuSubSwitcher() {
         updateTrack("subtitle", {
           current: i,
           ready: false,
-        })
+        }),
       );
 
       dispatch(
         updateVideo({
           textTrackEnabled: true,
           showSubSwitcher: false,
-        })
+        }),
       );
     },
-    [dispatch, subtitleTracks]
+    [dispatch, subtitleTracks],
   );
 
   const turnOffSubs = useCallback(() => {
@@ -43,14 +43,14 @@ function VideoMenuSubSwitcher() {
     dispatch(
       updateVideo({
         textTrackEnabled: false,
-      })
+      }),
     );
 
     dispatch(
       updateTrack("subtitle", {
         current: -1,
         ready: false,
-      })
+      }),
     );
   }, [dispatch, subtitleTracks]);
 
@@ -62,11 +62,11 @@ function VideoMenuSubSwitcher() {
         dispatch(
           updateVideo({
             showSubSwitcher: false,
-          })
+          }),
         );
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function VideoMenuSubSwitcher() {
       dispatch(
         updateVideo({
           showSubSwitcher: false,
-        })
+        }),
       );
     }
   }, [video.idleCount, dispatch]);

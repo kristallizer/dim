@@ -15,7 +15,7 @@ function ErrorBox() {
     dispatch(
       updateVideo({
         error: null,
-      })
+      }),
     );
   }, [dispatch]);
 

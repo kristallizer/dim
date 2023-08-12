@@ -19,7 +19,7 @@ function VideoActionSeekForward() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     if (video.currentTime + 15 >= video.duration) {
@@ -35,7 +35,7 @@ function VideoActionSeekForward() {
         seekForward();
       }
     },
-    [seekForward]
+    [seekForward],
   );
 
   useEffect(() => {

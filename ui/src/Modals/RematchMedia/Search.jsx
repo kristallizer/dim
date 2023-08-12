@@ -49,7 +49,7 @@ const SelectRematchSearch = () => {
 
       const req = await fetch(
         `/api/v1/media/tmdb_search?query=${query}&media_type=${mediaType}`,
-        config
+        config,
       );
 
       if (req.status !== 200) {
@@ -69,14 +69,14 @@ const SelectRematchSearch = () => {
         search();
       }
     },
-    [search]
+    [search],
   );
 
   const selectTmdb = useCallback(
     (id) => {
       tmdbID === id ? setTmdbID() : setTmdbID(id);
     },
-    [setTmdbID, tmdbID]
+    [setTmdbID, tmdbID],
   );
 
   return (

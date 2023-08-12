@@ -28,7 +28,7 @@ function VideoSubtitles() {
     const videoHeight = calcNewSize(
       videoRef.current.videoWidth,
       videoRef.current.videoHeight,
-      window.innerWidth
+      window.innerWidth,
     );
 
     const blackBarHeight = (window.innerHeight - videoHeight) / 2;
@@ -36,7 +36,7 @@ function VideoSubtitles() {
     if (blackBarHeight > 100) {
       document.documentElement.style.setProperty(
         "--blackBarHeight",
-        `${blackBarHeight}px`
+        `${blackBarHeight}px`,
       );
     }
   }, [videoRef]);
@@ -45,20 +45,20 @@ function VideoSubtitles() {
     (e) => {
       if (e.srcElement.activeCues.length > 0) {
         const cue = Object.entries(e.srcElement.activeCues).map(([_, x]) =>
-          x.text.replace(/<[^>]*>?/gm, "").split("\n")
+          x.text.replace(/<[^>]*>?/gm, "").split("\n"),
         );
 
         dispatch(
           updateVideo({
             currentCue: cue,
-          })
+          }),
         );
         setShow(true);
       } else {
         setShow(false);
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   /*
@@ -91,7 +91,7 @@ function VideoSubtitles() {
     dispatch(
       updateVideo({
         currentCue: [],
-      })
+      }),
     );
   }, [dispatch, current]);
 
@@ -126,7 +126,7 @@ function VideoSubtitles() {
         dispatch(
           updateVideo({
             prevSubs: current,
-          })
+          }),
         );
       } else {
         console.log("[Subtitles] fetching again in 1 second", text.length);
@@ -140,13 +140,13 @@ function VideoSubtitles() {
       dispatch(
         updateTrack("subtitle", {
           ready: true,
-        })
+        }),
       );
     }, 1000);
 
     return () => {
       console.log(
-        "[Subtitles] component unmounted, clearing fetching interval"
+        "[Subtitles] component unmounted, clearing fetching interval",
       );
       clearInterval(intervalID);
     };
@@ -164,7 +164,7 @@ function VideoSubtitles() {
     if (videoRef.current || !isVtt) return;
     console.log(
       "[Subtitles] setting player text status to",
-      video.textTrackEnabled
+      video.textTrackEnabled,
     );
     videoRef.current.textTracks[0].mode = video.textTrackEnabled
       ? "showing"

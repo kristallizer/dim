@@ -10,7 +10,7 @@ function Crumbs(props) {
         key={x}
         data-key={x}
         onClick={props.toggle}
-      />
+      />,
     );
   }
 

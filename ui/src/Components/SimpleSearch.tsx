@@ -18,7 +18,7 @@ export const SimpleSearch = ({ placeholder, onChange }: SimpleSearchProps) => {
     (e) => {
       setValue(e?.target?.value || "");
     },
-    [setValue]
+    [setValue],
   );
 
   return (

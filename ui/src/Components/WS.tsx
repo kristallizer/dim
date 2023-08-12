@@ -44,7 +44,7 @@ function WS(props: React.PropsWithChildren<{}>) {
       dispatch(
         addNotification({
           msg: "Connection to server lost, some actions might not work.",
-        })
+        }),
       );
 
       dispatch(wsShowReconnect());
@@ -53,7 +53,7 @@ function WS(props: React.PropsWithChildren<{}>) {
       setSilentConnect(true);
       dispatch(wsConnect(onNewSocket));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const handleOpen = useCallback(() => {

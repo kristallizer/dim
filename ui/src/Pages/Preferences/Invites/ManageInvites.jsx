@@ -31,7 +31,7 @@ function ManageInvites() {
       await dispatch(delInvite(token));
       dispatch(fetchInvites());
     },
-    [dispatch]
+    [dispatch],
   );
 
   const toClipboard = (token) => {
@@ -41,22 +41,22 @@ function ManageInvites() {
         dispatch(
           addNotification({
             msg: "Successfuly copied to your clipboard.",
-          })
+          }),
         );
       },
       () => {
         dispatch(
           addNotification({
             msg: "There was an error copying your id to your clipboard",
-          })
+          }),
         );
-      }
+      },
     );
   };
 
   const tokens = auth.invites.items.map((token, i) => {
     const { hours, mins, secs, date, month, year } = formatHHMMSSDate(
-      token.created
+      token.created,
     );
 
     return (

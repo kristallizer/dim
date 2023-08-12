@@ -36,7 +36,7 @@ function CardList() {
         setThrottleEventNewCardID(id);
       }
     },
-    [refetch, throttleEventNewCardID]
+    [refetch, throttleEventNewCardID],
   );
 
   useEffect(() => {
@@ -68,7 +68,7 @@ function CardList() {
           ));
           return memo;
         },
-        {} as Record<string, JSX.Element[]>
+        {} as Record<string, JSX.Element[]>,
       );
 
       card_list = Object.entries(sections).map(
@@ -89,7 +89,7 @@ function CardList() {
               <div className="cards">{sectionElements}</div>
             )}
           </section>
-        )
+        ),
       );
     }
   }

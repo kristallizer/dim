@@ -7,7 +7,7 @@ interface Props {
   credentials: [string, string];
   error: [
     React.Dispatch<React.SetStateAction<string>>,
-    React.Dispatch<React.SetStateAction<string>>
+    React.Dispatch<React.SetStateAction<string>>,
   ];
 }
 
@@ -59,7 +59,7 @@ function LoginBtn(props: Props) {
         authorize();
       }
     },
-    [authorize]
+    [authorize],
   );
 
   useEffect(() => {

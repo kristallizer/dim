@@ -47,7 +47,7 @@ function VideoActions(props) {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     setVisible(true);

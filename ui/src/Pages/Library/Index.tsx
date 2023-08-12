@@ -36,14 +36,14 @@ const Library = () => {
 
   const { data, refetch } = useGetUnmatchedMediaFilesQuery(
     { id: id, search: debouncedSearchQuery },
-    { refetchOnMountOrArgChange: true }
+    { refetchOnMountOrArgChange: true },
   );
 
   const mediafileSearch = useCallback(
     (query: string) => {
       setSearchQuery(query);
     },
-    [setSearchQuery]
+    [setSearchQuery],
   );
 
   useEffect(() => {

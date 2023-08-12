@@ -43,7 +43,7 @@ function VideoSeekBar(props) {
         `/api/v1/media/${video.episode?.id || video.mediaID}/progress?offset=${
           video.currentTime
         }`,
-        config
+        config,
       );
     })();
   }, [video.currentTime, token, video.episode?.id, video.mediaID]);
@@ -68,7 +68,7 @@ function VideoSeekBar(props) {
       dispatch(
         updateVideo({
           seeking: true,
-        })
+        }),
       );
 
       const rect = e.target.getBoundingClientRect();
@@ -78,7 +78,7 @@ function VideoSeekBar(props) {
 
       seekTo(newTime);
     },
-    [dispatch, player, seekTo, video.seeking]
+    [dispatch, player, seekTo, video.seeking],
   );
 
   return (

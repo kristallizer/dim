@@ -19,7 +19,7 @@ const Suggestion = (props: ISuggestion) => {
       event.stopPropagation();
       onClick(name);
     },
-    [onClick, name]
+    [onClick, name],
   );
 
   return (
@@ -81,7 +81,7 @@ export const Suggestions = ({ onClick }: ISuggestions) => {
       if (e.key === "ArrowDown") selectNext();
       if (e.key === "ArrowUp") selectPrev();
     },
-    [selectNext, selectPrev]
+    [selectNext, selectPrev],
   );
 
   useEffect(() => {

@@ -38,7 +38,7 @@ function Libraries() {
         dispatch(handleWsDelLibrary(payload.id));
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {

@@ -26,7 +26,7 @@ const SelectMediaFile = (props) => {
   const [ready, setReady] = useState(false);
 
   const { data: mediaFiles } = useGetMediaFilesQuery(
-    currentID ? currentID : skipToken
+    currentID ? currentID : skipToken,
   );
 
   useEffect(() => {

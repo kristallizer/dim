@@ -50,7 +50,7 @@ function Search() {
         setShowResults(false);
       }
     },
-    [history, query]
+    [history, query],
   );
 
   const fullSearch = useCallback(() => {

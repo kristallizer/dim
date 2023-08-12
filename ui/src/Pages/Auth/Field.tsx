@@ -41,7 +41,7 @@ function Field({
 
       setValue(newValue);
     },
-    [setValue, type]
+    [setValue, type],
   );
 
   return (

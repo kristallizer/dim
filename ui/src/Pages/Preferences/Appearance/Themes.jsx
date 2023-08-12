@@ -19,12 +19,12 @@ function Themes() {
       await dispatch(
         updateUserSettings({
           theme,
-        })
+        }),
       );
 
       await dispatch(fetchUserSettings());
     },
-    [dispatch, userSettings.data.theme]
+    [dispatch, userSettings.data.theme],
   );
 
   return (

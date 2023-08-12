@@ -181,7 +181,7 @@ export default function libraryReducer(state = initialState, action) {
         fetch_libraries: {
           ...state.fetch_libraries,
           items: state.fetch_libraries.items.filter(
-            (item) => item.id !== action.id
+            (item) => item.id !== action.id,
           ),
         },
       };

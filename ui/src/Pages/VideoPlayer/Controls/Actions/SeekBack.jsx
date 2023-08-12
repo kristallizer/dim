@@ -19,7 +19,7 @@ function VideoActionSeekBack() {
     dispatch(
       updateVideo({
         idleCount: 0,
-      })
+      }),
     );
 
     if (video.currentTime - 15 <= 0) {
@@ -35,7 +35,7 @@ function VideoActionSeekBack() {
         seekBackward();
       }
     },
-    [seekBackward]
+    [seekBackward],
   );
 
   useEffect(() => {

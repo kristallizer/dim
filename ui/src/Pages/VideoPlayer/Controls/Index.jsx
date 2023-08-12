@@ -21,7 +21,7 @@ function VideoControls() {
   const [visible, setVisible] = useState(true);
 
   const { data: media } = useGetMediaQuery(
-    video.mediaID ? video.mediaID : skipToken
+    video.mediaID ? video.mediaID : skipToken,
   );
 
   useEffect(() => {

@@ -18,10 +18,10 @@ function Autoplay() {
       dispatch(
         updateUserSettings({
           enable_autoplay: state,
-        })
+        }),
       );
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (

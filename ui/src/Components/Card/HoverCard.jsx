@@ -21,7 +21,7 @@ function HoverCard(props) {
 
       setHovering(false);
     },
-    [setHovering]
+    [setHovering],
   );
 
   const { id, name } = props.data;
