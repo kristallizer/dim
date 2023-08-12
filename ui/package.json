@@ -19,7 +19,7 @@
     "redux": "^4.0.5",
     "reselect": "^4.0.0",
     "sass": "^1.65.1",
-    "typescript": "^4.4.4",
+    "typescript": "^5.1.6",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
