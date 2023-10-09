@@ -3423,11 +3423,10 @@ dependencies = [
 
 [[package]]
 name = "tracing-tree"
-version = "0.2.2"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "758e983ab7c54fee18403994507e7f212b9005e957ce7984996fac8d11facedb"
+checksum = "2ec6adcab41b1391b08a308cc6302b79f8095d1673f6947c2dc65ffb028b0b2d"
 dependencies = [
- "atty",
  "nu-ansi-term",
  "tracing-core",
  "tracing-log",
